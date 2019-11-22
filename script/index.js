@@ -64,7 +64,11 @@ class Fighter {
   }
 
   single(target) {
-    this.attack(target);
+    let oldtext = outputBox.innerHTML
+    this.attack(target)
+    if (logging){
+      outputBox.innerHTML += oldtext
+    }
     endTurn();
   }
 
